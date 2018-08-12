@@ -22,7 +22,7 @@ RUN wget --no-check-certificate --max-redirect 3 https://sourceforge.net/project
 
 
 RUN mkdir -p /home/boost && tar zxf boost_${BOOST_VERSION_}.tar.gz -C /home/boost --strip-components=1
-RUM rm  /usr/include/boost_${BOOST_VERSION_}.tar.gz
+RUN rm  /usr/include/boost_${BOOST_VERSION_}.tar.gz
 RUN bash /home/boost/bootstrap.sh --prefix=/usr --exec-prefix=/usr
 RUN bash /home/boost/b2 install
 
