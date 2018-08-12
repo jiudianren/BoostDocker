@@ -16,11 +16,12 @@ RUN add-apt-repository ppa:ubuntu-toolchain-r/test -y
 RUN apt-get -qq update && apt-get install -qy g++-6 gcc git wget
 RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
 
+RUN mkdir -p /home/boost
 #download to workdir 
+WORKDIR /home/boost
 RUN wget --no-check-certificate --max-redirect 3 https://sourceforge.net/projects/boost/files/boost/${BOOST_VERSION}/boost_${BOOST_VERSION_}.tar.gz \
-    && mkdir -p /home/boost  \
     && tar zxf boost_${BOOST_VERSION_}.tar.gz -C /home/boost --strip-components=1  \
-    && rm  /usr/include/boost_${BOOST_VERSION_}.tar.gz \
+    && rm  /home/boost_${BOOST_VERSION_}.tar.gz \
     && cd /    \
     && find . -name b2 \
     && echo "one1"  \
@@ -29,7 +30,7 @@ RUN wget --no-check-certificate --max-redirect 3 https://sourceforge.net/project
     && find . -name b2 \
     && echo "one2" \
     && ls  /home/boost/   \
-    && /home/boost/tools/build/src/engine/bin.linuxx86_64/b2  install \
+    && /home/boost/b2  install \
     && rm -rf /home/boost
 
 
