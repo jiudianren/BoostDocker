@@ -26,7 +26,7 @@ RUN rm  /usr/include/boost_${BOOST_VERSION_}.tar.gz
 RUN bash /home/boost/bootstrap.sh --prefix=/usr --exec-prefix=/usr
 
 WORKDIR /home/boost/
-RUN ./b2 install
+#RUN ./b2 install
 #RUN rm -rf /home/boost
 
 
