@@ -25,9 +25,8 @@ RUN mkdir -p /home/boost && tar zxf boost_${BOOST_VERSION_}.tar.gz -C /home/boos
 RUN rm  /usr/include/boost_${BOOST_VERSION_}.tar.gz
 RUN bash /home/boost/bootstrap.sh --prefix=/usr --exec-prefix=/usr
 
-WORKDIR /home/boost/
-#RUN ./b2 install
-#RUN rm -rf /home/boost
+RUN ["/home/boost/b2"  "install"]
+RUN rm -rf /home/boost
 
 
 ENTRYPOINT /bin/bash
