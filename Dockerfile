@@ -25,11 +25,13 @@ RUN wget --no-check-certificate --max-redirect 3 https://sourceforge.net/project
     && cd /    \
     && find . -name b2 \
     && echo "one1"  \
+    && cd /home/boost   \
     && bash /home/boost/bootstrap.sh --prefix=/usr --exec-prefix=/usr \
     && cd /   \
     && find . -name b2 \
     && echo "one2" \
     && ls  /home/boost/   \
+    && cd /home/boost   \
     && /home/boost/b2  install \
     && rm -rf /home/boost
 
