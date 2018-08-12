@@ -21,7 +21,7 @@ RUN mkdir -p /home/boost
 WORKDIR /home/boost
 RUN wget --no-check-certificate --max-redirect 3 https://sourceforge.net/projects/boost/files/boost/${BOOST_VERSION}/boost_${BOOST_VERSION_}.tar.gz \
     && tar zxf boost_${BOOST_VERSION_}.tar.gz -C /home/boost --strip-components=1  \
-    && rm  /home/boost_${BOOST_VERSION_}.tar.gz \
+    && rm  /home/boost/boost_${BOOST_VERSION_}.tar.gz \
     && cd /    \
     && find . -name b2 \
     && echo "one1"  \
