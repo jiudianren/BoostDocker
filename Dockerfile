@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:xenial
 MAINTAINER Anastasios Zouzias <my_last_name@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
