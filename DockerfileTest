@@ -1,8 +1,6 @@
 FROM jiudianren/boostdocker:latest
 MAINTAINER jiudianren   <648087012@qq.com>
 
-
-
 RUN  bash /home/boost/bootstrap.sh --prefix=/usr --exec-prefix=/usr \
     && /home/boost/b2 install \
     && rm -rf /home/boost

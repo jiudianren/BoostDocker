@@ -22,6 +22,8 @@ RUN wget --no-check-certificate --max-redirect 3 https://sourceforge.net/project
     && rm  /usr/include/boost_${BOOST_VERSION_}.tar.gz \
     && bash /home/boost/bootstrap.sh --prefix=/usr --exec-prefix=/usr \
     && ls  /home/boost/   \
+    && chmod +x /home/boost/b2 \ 
+    && file /home/boost/b2
     && /home/boost/b2 install \
     && rm -rf /home/boost
 
