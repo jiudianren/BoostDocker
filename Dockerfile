@@ -29,9 +29,7 @@ RUN wget --no-check-certificate --max-redirect 3 https://sourceforge.net/project
     && find . -name b2 \
     && echo "one2" \
     && ls  /home/boost/   \
-    && chmod +x /home/boost/b2 \ 
-    && file /home/boost/b2 \
-    && /home/boost/tools/build/src/engine/bin.linuxx86_64/b2 install \
+    && /home/boost/tools/build/src/engine/bin.linuxx86_64/b2  install \
     && rm -rf /home/boost
 
 
