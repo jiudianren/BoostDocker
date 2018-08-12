@@ -1,0 +1,5 @@
+FROM jiudianren/boostdocker:latest
+MAINTAINER jiudianren   <648087012@qq.com>
+
+#todo 拷贝到本地文件夹
+ENTRYPOINT /bin/bash
