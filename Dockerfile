@@ -16,6 +16,7 @@ RUN add-apt-repository ppa:ubuntu-toolchain-r/test -y
 RUN apt-get -qq update && apt-get install -qy g++-6 gcc git wget
 RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
 
+WORKDIR /home/boost/
 RUN wget --no-check-certificate --max-redirect 3 https://sourceforge.net/projects/boost/files/boost/${BOOST_VERSION}/boost_${BOOST_VERSION_}.tar.gz \
     && mkdir -p /home/boost  \
     && tar zxf boost_${BOOST_VERSION_}.tar.gz -C /home/boost --strip-components=1  \
