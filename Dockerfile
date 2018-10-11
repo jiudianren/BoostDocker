@@ -18,6 +18,20 @@ RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
 RUN apt-get install -y python-dev &&  apt-get install -y zlib1g-dev && apt-get install -y openssl && apt-get install -y libssl-dev && apt-get clean
 
 
+#./bootstrap.sh
+#./bjam stage 
+#  --with-iostreams 
+#   --with-log define=BOOST_LOG_USE_STD_REGEX define=BOOST_LOG_WITHOUT_WCHAR_T 
+#  --with-system 
+#  --with-date_time 
+#  --with-filesystem 
+#   link=shared 
+#   runtime-link=shared 
+#   threading=multi 
+#    variant=debug 
+#-s ZLIB_SOURCE="/home/AAA/temp/zlib-1.2.11" -s ZLIB_INCLUDE="/home/AAA/temp/zlib-1.2.11"
+#最后一步指定 zlib ，如果zlib是自动以安装的话
+
 RUN mkdir -p /home/boost
 #download to workdir 
 WORKDIR /home/boost
